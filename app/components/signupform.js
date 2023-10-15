@@ -55,12 +55,12 @@ const Signup=({navigation})=>{
     }   
     const isValidForm=()=>{
         if(!isValidObjFeild(userInfo)) return updateError('Required All Feild',setError)
-        if(!fullname.trim()|| fullname.length<3) return updateError('Invalid name!',setError)
+        if(!fullname.trim()|| fullname.length<3) return updateError('Wrong name!',setError)
         if(!isvalidEmail(email)) return updateError('Invalid email!',setError)
         if(!phone.trim()||phone.length<11) return updateError('Invalid phone Number!',setError)
         if(!cnic.trim()||cnic.length<14) return updateError('Invalid cnic!',setError)
         if(!password.trim()|| password.length<8) return updateError('password is Less then 8 character!',setError)
-        if(password!==cnf_pass) return updateError('password does not match',setError)
+        if(password!==cnf_pass) return updateError('password can not match',setError)
         
         return true;
     }
@@ -86,7 +86,7 @@ const Signup=({navigation})=>{
         }
 
         formikActions.resetForm(); 
-        formikActions.setSubmitting( false );
+        formikActions.setSubmitting(false);
     };
     return (        
     <KeyboardAvoidingView style={styles.container} enabled behavior={Platform.OS==='ios'? 'padding':null}>
