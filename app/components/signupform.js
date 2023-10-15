@@ -85,8 +85,8 @@ const Signup=({navigation})=>{
             }
         }
 
-        formikActions.resetForm(); 
-        formikActions.setSubmitting(false);
+        formikActions.resetForm( ); 
+        formikActions.setSubmitting( false );
     };
     return (        
     <KeyboardAvoidingView style={styles.container} enabled behavior={Platform.OS==='ios'? 'padding':null}>
